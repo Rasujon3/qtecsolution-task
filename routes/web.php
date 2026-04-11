@@ -32,7 +32,7 @@ Route::post('admin-login', [AccessController::class, 'adminLogin'])->name('admin
 
 Route::get('/logout', [AccessController::class, 'Logout'])->name('logout');
 
-Route::group(['middleware' => ['prevent-back-history', 'admin_auth']], function () {
+Route::group(['middleware' => ['prevent-back-history']], function () {
     // admin dashboard
     Route::get('/dashboard', [DashboardController::class, 'Dashboard'])->name('dashboard');
     Route::get('password-change', [AccessController::class, 'passwordChange'])->name('password-change');
@@ -92,7 +92,7 @@ Route::get('/clear-cache', function () {
     Artisan::call('view:clear');
     Artisan::call('optimize');
 
-    return 'All caches (config, route, view, optimize) have been cleared!';
+    return 'All caches (cache, config, route, view, optimize) have been cleared!';
 });
 
 Route::get('/migrate', function(){

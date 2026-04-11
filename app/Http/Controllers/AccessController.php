@@ -15,20 +15,6 @@ class AccessController extends Controller
     {
     	try
         {
-            // check user type admin or not
-            $user = User::where('user_type_id', 1)
-                ->where('role', 'admin')
-                ->where('email', $request->email)
-                ->first();
-
-            if (!$user) {
-                $notification = array(
-                    'message' => 'Only Admin can access this page',
-                    'alert-type' => 'error'
-                );
-
-                return Redirect()->back()->with($notification);
-            }
         	$data = $request->all();
 		    	if(Auth::attempt(['email' => $data['email'], 'password' => $data['password']])){
 
