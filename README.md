@@ -1,64 +1,275 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+# Task Management System
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+A simple and efficient task management web application built with Laravel. This system allows teams to organize daily work, track task progress, and manage tasks through a clean admin interface.
 
-## About Laravel
+---
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Live Demo
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+- **Application URL:** `your-live-url-here`
+- **Demo Video (Loom):** `your-loom-video-link-here`
+- **GitHub Repository:** `your-github-repo-link-here`
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+---
 
-## Learning Laravel
+## Features
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+- Create, update, and delete tasks
+- Track task status — Pending, In Progress, Completed
+- Set task priority — Low, Medium, High
+- Set due dates with overdue detection
+- Quick status update via dropdown (AJAX — no page reload)
+- Server-side DataTable with search and pagination
+- Form validation with meaningful error messages
+- Flash notifications on every action
+- Error logging for all critical operations
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+---
 
-## Laravel Sponsors
+## Technologies Used
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+| Layer | Technology |
+|---|---|
+| Backend Framework | Laravel 11 |
+| Language | PHP 8.2+ |
+| Database | MySQL |
+| Frontend | AdminLTE 3 (Bootstrap 4) |
+| DataTable | Yajra Laravel DataTables |
+| Testing | PHPUnit (Laravel built-in) |
+| Version Control | Git |
 
-### Premium Partners
+---
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+## Requirements
 
-## Contributing
+- PHP >= 8.2
+- Composer
+- MySQL
+- Node.js & NPM
+- Laravel 11
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+---
 
-## Code of Conduct
+## Setup Instructions
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+### 1. Clone the Repository
 
-## Security Vulnerabilities
+```bash
+git clone https://github.com/your-username/your-repo-name.git
+cd your-repo-name
+```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+### 2. Install PHP Dependencies
 
-## License
+```bash
+composer install
+```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+### 3. Environment Configuration
+
+```bash
+cp .env.example .env
+php artisan key:generate
+```
+
+### 4. Configure Database
+
+Open `.env` file and update your database credentials:
+
+```env
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=task_manager
+DB_USERNAME=root
+DB_PASSWORD=your_password
+```
+
+### 5. Run Migrations
+
+```bash
+php artisan migrate
+```
+
+### 6. Install Frontend Dependencies
+
+```bash
+npm install
+npm run dev
+```
+
+### 7. Start the Application
+
+```bash
+php artisan serve
+```
+
+Visit `http://localhost:8000` in your browser.
+
+---
+
+## Running Tests
+
+This project uses PHPUnit for unit and feature testing.
+
+### Run All Tests
+
+```bash
+composer test
+```
+
+### Run Only Unit Tests
+
+```bash
+php artisan test --testsuite=Unit
+```
+
+### Run Only Feature Tests
+
+```bash
+php artisan test --testsuite=Feature
+```
+
+### Run a Specific Test File
+
+```bash
+php artisan test tests/Feature/TaskControllerTest.php
+php artisan test tests/Unit/TaskModelTest.php
+```
+
+---
+
+## Testing Approach
+
+### What is Tested
+
+**Unit Tests** (`tests/Unit/TaskModelTest.php`) — tests the Task model in isolation:
+
+- Fillable fields are correctly defined
+- Task can be created using factory
+- Status only accepts valid values (pending, in_progress, completed)
+- Priority only accepts valid values (low, medium, high)
+- Description field accepts null
+- Due date field accepts null
+
+**Feature Tests** (`tests/Feature/TaskControllerTest.php`) — tests HTTP behavior end-to-end:
+
+- Index page loads successfully
+- Create page is accessible
+- Task is stored in database with valid data
+- Task can be created without optional fields (description, due_date)
+- Validation rejects missing title
+- Validation rejects invalid status value
+- Validation rejects invalid priority value
+- Validation rejects past due dates
+- Edit page loads with correct task data
+- Task is updated correctly in database
+- Validation rejects update with missing title
+- Task is deleted and removed from database
+- Deleting a non-existent task returns error response
+- Task status updates correctly via AJAX
+- Invalid status value is rejected on status update
+
+### Testing Strategy
+
+- **SQLite in-memory database** is used during testing — no real database is affected
+- **`RefreshDatabase` trait** resets the database between each test for isolation
+- **`withoutMiddleware()`** is used in `TestCase.php` to bypass authentication during tests
+- **Task Factory** generates realistic fake data for tests using Faker
+- Tests are written to be independent — each test sets up its own data
+
+---
+
+## Project Structure
+
+```
+├── app/
+│   ├── Http/
+│   │   ├── Controllers/
+│   │   │   └── TaskController.php       # CRUD + status update logic
+│   │   └── Requests/
+│   │       ├── StoreTaskRequest.php     # Validation for creating tasks
+│   │       └── UpdateTaskRequest.php    # Validation for updating tasks
+│   └── Models/
+│       └── Task.php                     # Task eloquent model
+│
+├── database/
+│   ├── factories/
+│   │   └── TaskFactory.php              # Fake data generator for tests
+│   └── migrations/
+│       └── xxxx_create_tasks_table.php  # Tasks table schema
+│
+├── resources/views/admin/tasks/
+│   ├── index.blade.php                  # Task list with DataTable
+│   ├── create.blade.php                 # Add new task form
+│   └── edit.blade.php                   # Edit existing task form
+│
+├── routes/
+│   └── web.php                          # Application routes
+│
+├── tests/
+│   ├── Unit/
+│   │   └── TaskModelTest.php            # Model unit tests
+│   └── Feature/
+│       └── TaskControllerTest.php       # Controller feature tests
+│
+└── phpunit.xml                          # PHPUnit configuration
+```
+
+---
+
+## API / Routes
+
+| Method | URI | Name | Description |
+|---|---|---|---|
+| GET | `/tasks` | `tasks.index` | List all tasks |
+| GET | `/tasks/create` | `tasks.create` | Show create form |
+| POST | `/tasks` | `tasks.store` | Store new task |
+| GET | `/tasks/{task}` | `tasks.show` | Show edit form |
+| PUT/PATCH | `/tasks/{task}` | `tasks.update` | Update task |
+| DELETE | `/tasks/{task}` | `tasks.destroy` | Delete task |
+| POST | `/task-status-update` | `task.statusUpdate` | Update task status via AJAX |
+
+---
+
+## Assumptions & Decisions Made
+
+**1. Status values are fixed**
+Three statuses are supported: `pending`, `in_progress`, and `completed`. These cover the standard task lifecycle and were deemed sufficient for the client's needs.
+
+**2. Priority is required**
+Priority (`low`, `medium`, `high`) is a required field. It was added to help teams focus on what matters most, which aligns with the client's goal of efficient daily work management.
+
+**3. Due date is optional**
+Not all tasks have a fixed deadline. The due date field is optional but validates that future dates are selected when provided.
+
+**4. No authentication system was built from scratch**
+The project uses an existing `auth_check` middleware already present in the codebase. The middleware is bypassed during testing using `withoutMiddleware()` to keep tests focused on business logic.
+
+**5. DataTables for task listing**
+Yajra DataTables was used for server-side rendering of the task list. This handles search, pagination, and ordering efficiently even with large datasets.
+
+**6. AJAX for status updates**
+Status changes are handled via AJAX dropdown to allow quick updates without full page reloads, improving the user experience.
+
+**7. SQLite for testing**
+Tests run on an in-memory SQLite database to ensure speed and isolation. This avoids any risk of test data polluting the development or production database.
+
+**8. Soft deletes not implemented**
+Hard deletes were used for simplicity. Soft deletes could be added in a future iteration if task history becomes a requirement.
+
+---
+
+## Notes
+
+- Flash notifications use the `alert-type` session key — make sure the layout blade handles `success` and `error` alert types
+- The `select2bs4` class on dropdowns requires Select2 and Bootstrap 4 to be loaded in the admin layout
+- DataTable columns use `rawColumns()` for HTML rendering — be careful about XSS if user input is rendered raw in future columns
+
+---
+
+## Author
+
+**Your Name**
+- GitHub: [@your-username](https://github.com/your-username)
+- Email: your-email@example.com
