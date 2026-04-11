@@ -6,9 +6,10 @@ A simple and efficient task management web application built with Laravel. This 
 
 ## Live Demo
 
-- **Application URL:** `your-live-url-here`
+- **Application URL:** `https://qtecsolution.smcglobal.shop/`
 - **Demo Video (Loom):** `your-loom-video-link-here`
-- **GitHub Repository:** `your-github-repo-link-here`
+- **GitHub Repository:** `https://github.com/Rasujon3/qtecsolution-task`
+- **Live Credentials:** `Email` : `admin@gmail.com` - `Pass` : `123456`
 
 ---
 
@@ -55,8 +56,8 @@ A simple and efficient task management web application built with Laravel. This 
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/your-repo-name.git
-cd your-repo-name
+git clone https://github.com/Rasujon3/qtecsolution-task
+cd qtecsolution-task
 ```
 
 ### 2. Install PHP Dependencies
@@ -270,6 +271,6 @@ Hard deletes were used for simplicity. Soft deletes could be added in a future i
 
 ## Author
 
-**Your Name**
-- GitHub: [@your-username](https://github.com/your-username)
-- Email: your-email@example.com
+**Ruhul Amin**
+- GitHub: [@Rasujon3](https://github.com/Rasujon3/)
+- Email: ruhul.amin.sujon.1997@gmail.com
