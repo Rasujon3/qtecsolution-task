@@ -223,7 +223,7 @@ class TaskController extends Controller
             return response()->json([
                 'status'  => true,
                 'message' => 'Task has been deleted successfully!',
-            ]);
+            ], 200);
 
         } catch (Exception $e) {
             Log::error('Error deleting task: ', [
@@ -234,7 +234,7 @@ class TaskController extends Controller
             return response()->json([
                 'status'  => false,
                 'message' => 'Something went wrong!!!',
-            ]);
+            ], 500);
         }
     }
 
