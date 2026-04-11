@@ -6,6 +6,7 @@ use App\Http\Controllers\ExperienceController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\SpecialityController;
 use App\Http\Controllers\StaffController;
+use App\Http\Controllers\TaskController;
 use App\Http\Controllers\WorkingDayController;
 use App\Http\Controllers\WorkingTimeRangeController;
 use Illuminate\Support\Facades\Artisan;
@@ -82,6 +83,10 @@ Route::group(['middleware' => ['prevent-back-history']], function () {
 
     Route::post('staffs/{staff}/update-services', [StaffController::class,'updateServices'])
         ->name('staffs.update.services');
+
+    Route::resource('tasks', TaskController::class);
+    Route::post('task-status-update', [TaskController::class, 'taskStatusUpdate'])
+        ->name('tasks.updateStatus');
 });
 
 
