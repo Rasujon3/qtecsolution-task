@@ -7,7 +7,7 @@ A simple and efficient task management web application built with Laravel. This 
 ## Live Demo
 
 - **Application URL:** `https://qtecsolution.smcglobal.shop/`
-- **Demo Video (Loom):** `your-loom-video-link-here`
+- **Demo Video (Loom):** `https://www.loom.com/share/d85ee7b5df4343a18c9334425f16b3f5`
 - **GitHub Repository:** `https://github.com/Rasujon3/qtecsolution-task`
 - **Live Credentials:** `Email` : `admin@gmail.com` - `Pass` : `123456`
 
