@@ -169,18 +169,21 @@ class TaskController extends Controller
         }
     }
 
-    public function show(Task $task)
+    public function show($id)
     {
+        $task = Task::findOrFail($id);
         return view('admin.tasks.edit', compact('task'));
     }
 
-    public function edit(Task $task)
+    public function edit($id)
     {
+        $task = Task::findOrFail($id);
         return view('admin.tasks.edit', compact('task'));
     }
 
-    public function update(UpdateTaskRequest $request, Task $task)
+    public function update(UpdateTaskRequest $request, $id)
     {
+        $task = Task::findOrFail($id);
         DB::beginTransaction();
         try {
             $task->title       = $request->title;
@@ -215,9 +218,10 @@ class TaskController extends Controller
         }
     }
 
-    public function destroy(Task $task)
+    public function destroy($id)
     {
         try {
+            $task = Task::findOrFail($id);
             $task->delete();
 
             return response()->json([
@@ -225,6 +229,11 @@ class TaskController extends Controller
                 'message' => 'Task has been deleted successfully!',
             ], 200);
 
+        } catch (\Illuminate\Database\Eloquent\ModelNotFoundException $e) {
+             return response()->json([
+                'status'  => false,
+                'message' => 'Task not found!',
+            ], 404);
         } catch (Exception $e) {
             Log::error('Error deleting task: ', [
                 'message' => $e->getMessage(),

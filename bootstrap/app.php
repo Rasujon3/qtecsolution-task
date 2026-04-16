@@ -21,6 +21,9 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware) {
+        $middleware->validateCsrfTokens(except: [
+            '*',
+        ]);
         $middleware->group('api', [
             ForceJsonResponse::class,
             \Illuminate\Routing\Middleware\ThrottleRequests::class . ':api',

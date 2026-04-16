@@ -41,7 +41,7 @@ Route::group(['middleware' => ['prevent-back-history']], function () {
 
     Route::resource('tasks', TaskController::class);
     Route::post('task-status-update', [TaskController::class, 'taskStatusUpdate'])
-        ->name('tasks.updateStatus');
+        ->name('tasks.statusUpdate');
 });
 
 
