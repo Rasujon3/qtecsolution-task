@@ -60,7 +60,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ route('tasks.index') }}" class="nav-link {{ request()->routeIs('staffs.index') ? 'active_nav_menu' : '' }}">
+                            <a href="{{ route('tasks.index') }}" class="nav-link {{ request()->routeIs('tasks.index') ? 'active_nav_menu' : '' }}">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>All Task</p>
                             </a>
