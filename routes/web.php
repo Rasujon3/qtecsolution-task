@@ -50,9 +50,16 @@ Route::get('/clear-cache', function () {
     Artisan::call('config:clear');
     Artisan::call('route:clear');
     Artisan::call('view:clear');
-    Artisan::call('optimize');
 
     return 'All caches (cache, config, route, view, optimize) have been cleared!';
+});
+
+
+Route::get('/optimize', function () {
+    Artisan::call('optimize:clear');
+    Artisan::call('optimize');
+
+    return 'All caches (optimize) have been cleared!';
 });
 
 Route::get('/migrate', function(){
